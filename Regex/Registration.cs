@@ -43,30 +43,55 @@ namespace UserRegistration
                 }
             }
         }
-                public void EmailRegistration()
+        public void EmailRegistration()
+        {
+            string pattern_email = @"^[A-Za-z.-_]{3,}[@][A-Za-z]{2,}[.][A-Za-z]{2,3}[.]{0,1}[A-Za-z]{0,2}$"; //abc.xyz@bl.co.in
+            string input_email = "";
+
+            Regex obj = new Regex(pattern_email);
+
+            while (true)
+            {
+                Console.Write("Enter your email: ");
+                input_email = Console.ReadLine();
+
+                if (obj.IsMatch(input_email))
                 {
-                    string pattern_email = @"^[A-Za-z.-_]{3,}[@][A-Za-z]{2,}[.][A-Za-z]{2,3}[.]{0,1}[A-Za-z]{0,2}$"; //abc.xyz@bl.co.in
-                    string input_email = "";
+                    Console.WriteLine($"'{input_email}' is a valid Email.\n");
+                }
+                else
+                {
+                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
+                }
+            }
+        }
+            public void MobileRegistration()
+            {
+                string pattern_mobile = @"^[9][1][ ][6-9][0-9]{9}$"; //91 9340596362
+                string input_mobile = "";
 
-                    Regex obj = new Regex(pattern_email);
+                Regex obj = new Regex(pattern_mobile);
 
-                    while (true)
+                while (true)
+                {
+                    Console.Write("Enter your mobile number: ");
+                    input_mobile = Console.ReadLine();
+
+                    if (obj.IsMatch(input_mobile))
                     {
-                        Console.Write("Enter your email: ");
-                        input_email = Console.ReadLine();
-
-                        if (obj.IsMatch(input_email))
-                        {
-                            Console.WriteLine($"'{input_email}' is a valid Email.\n");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invailid Input!! \nTry Again...\n");
-                        }
+                        Console.WriteLine($"'{input_mobile}' is a valid mobile number.\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invailid Input!! \nTry Again...\n");
                     }
                 }
             }
         }
+    }
+
+           
+        
     
 
         

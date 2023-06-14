@@ -12,7 +12,8 @@ namespace UserRegistration
 
             Registration reg = new Registration();
            // reg.Register();
-            reg.EmailRegistration();
+            //reg.EmailRegistration();
+            reg.MobileRegistration();
         }
     }
 }
