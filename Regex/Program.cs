@@ -14,6 +14,7 @@ namespace UserRegistration
            // reg.Register();
             //reg.EmailRegistration();
            // reg.MobileRegistration();
+           // reg.PasswordRegistration();
             reg.PasswordRegistration();
         }
     }

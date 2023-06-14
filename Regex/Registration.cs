@@ -65,31 +65,31 @@ namespace UserRegistration
                 }
             }
         }
-            public void MobileRegistration()
+        public void MobileRegistration()
+        {
+            string pattern_mobile = @"^[9][1][ ][6-9][0-9]{9}$"; //91 9340596362
+            string input_mobile = "";
+
+            Regex obj = new Regex(pattern_mobile);
+
+            while (true)
             {
-                string pattern_mobile = @"^[9][1][ ][6-9][0-9]{9}$"; //91 9340596362
-                string input_mobile = "";
+                Console.Write("Enter your mobile number: ");
+                input_mobile = Console.ReadLine();
 
-                Regex obj = new Regex(pattern_mobile);
-
-                while (true)
+                if (obj.IsMatch(input_mobile))
                 {
-                    Console.Write("Enter your mobile number: ");
-                    input_mobile = Console.ReadLine();
-
-                    if (obj.IsMatch(input_mobile))
-                    {
-                        Console.WriteLine($"'{input_mobile}' is a valid mobile number.\n");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invailid Input!! \nTry Again...\n");
-                    }
+                    Console.WriteLine($"'{input_mobile}' is a valid mobile number.\n");
+                }
+                else
+                {
+                    Console.WriteLine("Invailid Input!! \nTry Again...\n");
                 }
             }
+        }
         public void PasswordRegistration()
         {
-            string pattern_password_rule1 = @"^[A-Za-z0-9.-_]{8,}$";
+            string pattern_password_rule1 = @"^[A-Z][A-Za-z0-9.-_]{7,}$";
             string input_password_rule1 = "";
 
             Regex obj = new Regex(pattern_password_rule1);
@@ -111,19 +111,16 @@ namespace UserRegistration
         }
     }
 }
-        
-    
 
-           
-        
-    
 
-        
-    
 
-            
-        
-    
 
-    
+
+
+
+
+
+
+
+
 
